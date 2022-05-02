@@ -1,13 +1,14 @@
 //
-//  ViewController.swift
+//  SearchViewController.swift
 //  News
 //
 //  Created by Jianrui Pei on 2/5/2022.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
+class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,4 +17,3 @@ class ViewController: UIViewController {
 
 
 }
-
