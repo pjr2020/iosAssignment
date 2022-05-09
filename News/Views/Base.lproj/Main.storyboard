@@ -57,56 +57,42 @@
                     <view key="view" contentMode="scaleToFill" id="a7F-aE-pNn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYB-Wt-SwX">
-                                <rect key="frame" x="50" y="64" width="314" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dcf-EG-5Vl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="dcf-EG-5Vl" firstAttribute="trailing" secondItem="DYB-Wt-SwX" secondAttribute="trailing" constant="50" id="cIC-9H-iJ8"/>
-                            <constraint firstItem="DYB-Wt-SwX" firstAttribute="top" secondItem="dcf-EG-5Vl" secondAttribute="top" constant="20" id="t3u-Od-gZc"/>
-                            <constraint firstItem="DYB-Wt-SwX" firstAttribute="leading" secondItem="dcf-EG-5Vl" secondAttribute="leading" constant="50" id="tM8-k1-z8q"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="zLD-Yg-4ET"/>
+                    <navigationItem key="navigationItem" title="Search" id="xKH-Xi-g90">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="line.3.horizontal" catalog="system" id="VrP-Zx-UPU">
+                            <connections>
+                                <action selector="sideMenuTapped:" destination="DDh-wb-ere" id="NPf-2G-b0E"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMn-Ed-pCt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3586.9565217391305" y="65.625"/>
+            <point key="canvasLocation" x="4497.1014492753629" y="65.625"/>
         </scene>
-        <!--Setting-->
+        <!--Settings-->
         <scene sceneID="IZs-jv-Fa1">
             <objects>
                 <viewController storyboardIdentifier="SettingViewController" id="8si-O3-190" customClass="SettingViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pR8-Uz-eFU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozr-jg-0D5">
-                                <rect key="frame" x="50" y="64" width="314" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cIt-Kz-cTD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="cIt-Kz-cTD" firstAttribute="trailing" secondItem="ozr-jg-0D5" secondAttribute="trailing" constant="50" id="5XB-FA-Cx9"/>
-                            <constraint firstItem="ozr-jg-0D5" firstAttribute="top" secondItem="cIt-Kz-cTD" secondAttribute="top" constant="20" id="ZQw-6W-aaZ"/>
-                            <constraint firstItem="ozr-jg-0D5" firstAttribute="leading" secondItem="cIt-Kz-cTD" secondAttribute="leading" constant="50" id="dDN-pK-ELs"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setting" image="gearshape.fill" catalog="system" id="Foh-tn-f7t"/>
+                    <navigationItem key="navigationItem" title="Settings" id="Njc-xe-6mC">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="line.3.horizontal" catalog="system" id="dCc-Hh-zBh">
+                            <connections>
+                                <action selector="sideMenuTapped:" destination="8si-O3-190" id="etQ-EG-7hY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bD3-rd-S63" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="929" y="723"/>
+            <point key="canvasLocation" x="1839.1304347826087" y="722.54464285714278"/>
         </scene>
         <!--Popular-->
         <scene sceneID="xbj-hk-fTD">
@@ -115,28 +101,20 @@
                     <view key="view" contentMode="scaleToFill" id="4og-ur-Bie">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlA-EK-J7g">
-                                <rect key="frame" x="50" y="64" width="314" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="aEU-yB-wMf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="GlA-EK-J7g" firstAttribute="leading" secondItem="aEU-yB-wMf" secondAttribute="leading" constant="50" id="PhB-Ls-TBz"/>
-                            <constraint firstItem="aEU-yB-wMf" firstAttribute="trailing" secondItem="GlA-EK-J7g" secondAttribute="trailing" constant="50" id="ZMd-OS-2fT"/>
-                            <constraint firstItem="GlA-EK-J7g" firstAttribute="top" secondItem="aEU-yB-wMf" secondAttribute="top" constant="20" id="zB1-0u-wg1"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Popular" image="chart.line.uptrend.xyaxis" catalog="system" id="0rX-1z-Fnj"/>
-                    <navigationItem key="navigationItem" id="P2F-Zo-fQp"/>
+                    <navigationItem key="navigationItem" title="Popular" id="P2F-Zo-fQp">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="line.3.horizontal" catalog="system" id="Hi4-41-RZg">
+                            <connections>
+                                <action selector="sideMenuTapped:" destination="6Au-8C-hbm" id="KiE-Oq-jGJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRG-aW-LUx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1828" y="723"/>
+            <point key="canvasLocation" x="3647.826086956522" y="722.54464285714278"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="WZD-9E-UI1">
@@ -151,9 +129,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="3J0-dC-92Y" kind="relationship" relationship="viewControllers" id="xo5-ev-odZ"/>
-                        <segue destination="6Au-8C-hbm" kind="relationship" relationship="viewControllers" id="hES-PK-wx6"/>
-                        <segue destination="DDh-wb-ere" kind="relationship" relationship="viewControllers" id="jvJ-qc-gIv"/>
-                        <segue destination="8si-O3-190" kind="relationship" relationship="viewControllers" id="NYh-jg-3Bk"/>
+                        <segue destination="rVK-Gl-pqT" kind="relationship" relationship="viewControllers" id="hES-PK-wx6"/>
+                        <segue destination="OOa-Mk-zQw" kind="relationship" relationship="viewControllers" id="jvJ-qc-gIv"/>
+                        <segue destination="tk8-DZ-Nen" kind="relationship" relationship="viewControllers" id="NYh-jg-3Bk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J3A-yg-jvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -178,6 +156,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Adb-3o-spm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1839.1304347826087" y="65.625"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="AJs-RJ-FVd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tk8-DZ-Nen" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Setting" image="gearshape.fill" catalog="system" id="Foh-tn-f7t"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UMf-HY-dgI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8si-O3-190" kind="relationship" relationship="rootViewController" id="Yne-mJ-1nd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxk-pj-KSx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="722.54464285714278"/>
+        </scene>
+        <!--Popular-->
+        <scene sceneID="kin-bi-kr2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rVK-Gl-pqT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Popular" image="chart.line.uptrend.xyaxis" catalog="system" id="0rX-1z-Fnj"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8dl-xb-EKW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6Au-8C-hbm" kind="relationship" relationship="rootViewController" id="C2R-q5-XY5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="93b-Xr-u9X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2737.68115942029" y="722.54464285714278"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="NDf-S0-8tQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OOa-Mk-zQw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="zLD-Yg-4ET"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rnm-lg-kRD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DDh-wb-ere" kind="relationship" relationship="rootViewController" id="eq3-BW-HxZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sFq-FI-1EY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3586.9565217391305" y="65.625"/>
         </scene>
     </scenes>
     <resources>

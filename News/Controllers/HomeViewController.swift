@@ -16,12 +16,24 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var sideMenuButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        sideMenuOpen()
+        
+    }
+    
+    func sideMenuOpen(){
+        sideMenu = SideMenuNavigationController(rootViewController: SideMenuTableViewController())
+        sideMenu?.leftSide = true
+        //Adding the draging option
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
+        SideMenuManager.default.leftMenuNavigationController = sideMenu
+        sideMenu?.setNavigationBarHidden(true, animated: true)
+
     }
     
     
     @IBAction func sideMenuTapped(_ sender: Any) {
-        
+        present(sideMenu!, animated: true, completion: nil)
     }
     
 
