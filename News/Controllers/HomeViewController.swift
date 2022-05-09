@@ -7,13 +7,22 @@
 
 import Foundation
 import UIKit
+import SideMenu
 
 class HomeViewController: UIViewController {
+    
+    var sideMenu: SideMenuNavigationController?
 
+    @IBOutlet weak var sideMenuButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
+    
+    @IBAction func sideMenuTapped(_ sender: Any) {
+        
+    }
+    
 
 }
