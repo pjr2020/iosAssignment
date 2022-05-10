@@ -404,7 +404,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7DD85D0F6105636DD404E185 /* Pods-News.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -432,7 +431,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02FAF56892B2D577EA769E7A /* Pods-News.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
