@@ -7,17 +7,24 @@
 
 import Foundation
 import UIKit
-
+import SideMenu
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var sideMenu: SideMenuNavigationController?
 
+    @IBOutlet weak var sideMenuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        self.tableView?.delegate = self
+        self.tableView?.dataSource = self
+        
+        sideMenuOpen()
+        
     }
+
     var articles = [1,2,3]
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,6 +46,22 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     return cell
 
     }
+    
+    func sideMenuOpen(){
+        sideMenu = SideMenuNavigationController(rootViewController: SideMenuTableViewController())
+        sideMenu?.leftSide = true
+        //Adding the draging option
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
+        SideMenuManager.default.leftMenuNavigationController = sideMenu
+        sideMenu?.setNavigationBarHidden(true, animated: true)
+
+    }
+    
+    
+    @IBAction func sideMenuTapped(_ sender: Any) {
+        present(sideMenu!, animated: true, completion: nil)
+    }
+    
 }
 
 class ArticleTableViewCell:UITableViewCell{
