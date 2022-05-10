@@ -57,8 +57,6 @@
 		02A385B828277FA40031ED08 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				891C463C282002E300444E34 /* LaunchScreen.storyboard */,
-				891C4637282002E200444E34 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -103,16 +101,18 @@
 			children = (
 				02A385B928277FC50031ED08 /* Models */,
 				02A385B828277FA40031ED08 /* Views */,
-				891C46452820078B00444E34 /* Controllers */,
+				891C46452820078B00444E34 /* Controller */,
 				891C4631282002E200444E34 /* AppDelegate.swift */,
 				891C4633282002E200444E34 /* SceneDelegate.swift */,
 				891C463A282002E300444E34 /* Assets.xcassets */,
+				891C463C282002E300444E34 /* LaunchScreen.storyboard */,
+				891C4637282002E200444E34 /* Main.storyboard */,
 				891C463F282002E300444E34 /* Info.plist */,
 			);
 			path = News;
 			sourceTree = "<group>";
 		};
-		891C46452820078B00444E34 /* Controllers */ = {
+		891C46452820078B00444E34 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				891C46462820082B00444E34 /* ArticleViewController.swift */,
@@ -122,7 +122,7 @@
 				891C465028201BA500444E34 /* SettingViewController.swift */,
 				02BA2E6D2829C99E0070DAA8 /* SideMenuTableViewController.swift */,
 			);
-			path = Controllers;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		C112A1A3E409BB00F04F8735 /* Frameworks */ = {
