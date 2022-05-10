@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
@@ -32,7 +33,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let cell =  tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleTableViewCell
     let index = articles[indexPath.row]
     //cell.ArticleImage?.image = UIImage(systemName: "Homekit")
-        cell.ArticleImage.image = "test.jpeg"
+        cell.ArticleImage.image = UIImage(named: "test")
         cell.ArticleTitle?.setTitle("Title\(index)", for: .normal)
         cell.ArticleTimeAndSource?.text = "Time and Source\(index)"
     return cell
