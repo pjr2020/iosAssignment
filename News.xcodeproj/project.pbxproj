@@ -108,6 +108,8 @@
 				891C463C282002E300444E34 /* LaunchScreen.storyboard */,
 				891C4637282002E200444E34 /* Main.storyboard */,
 				891C463F282002E300444E34 /* Info.plist */,
+				891C463C282002E300444E34 /* LaunchScreen.storyboard */,
+				891C4637282002E200444E34 /* Main.storyboard */,
 			);
 			path = News;
 			sourceTree = "<group>";
