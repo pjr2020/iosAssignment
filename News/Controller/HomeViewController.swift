@@ -32,7 +32,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let cell =  tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleTableViewCell
     let index = articles[indexPath.row]
     //cell.ArticleImage?.image = UIImage(systemName: "Homekit")
-        cell.test?.text = "\(index)123"
+        cell.ArticleImage.image = "test.jpeg"
+        cell.ArticleTitle?.setTitle("Title\(index)", for: .normal)
+        cell.ArticleTimeAndSource?.text = "Time and Source\(index)"
     return cell
 
     }
@@ -40,7 +42,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
 class ArticleTableViewCell:UITableViewCell{
     
-    @IBOutlet weak var test: UILabel!
+    @IBOutlet weak var ArticleTitle: UIButton!
+    @IBOutlet weak var ArticleImage: UIImageView!
+    @IBOutlet weak var ArticleTimeAndSource: UILabel!
     
 }
 
