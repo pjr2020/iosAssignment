@@ -6,6 +6,7 @@ target 'News' do
   use_frameworks!
 
   # Pods for News
+source 'https://cocoapods-cdn.netlify.app/'
 pod 'SideMenu'
 
 end
