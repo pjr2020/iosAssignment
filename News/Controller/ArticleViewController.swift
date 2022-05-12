@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 
 class ArticleViewController: UIViewController {
-
+    @IBOutlet weak var ArticleTitle: UILabel!
+    
+    @IBOutlet weak var ArticleDetail: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

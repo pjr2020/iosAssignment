@@ -9,16 +9,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Article View Controller-->
+        <!--Article-->
         <scene sceneID="f8D-Rw-cFg">
             <objects>
                 <viewController storyboardIdentifier="ArticleViewController" id="RS3-EJ-j4I" customClass="ArticleViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qr4-8e-Zkd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Mutiple line very very very long title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L84-4a-ux7">
+                                <rect key="frame" x="0.0" y="108" width="414" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mI5-Vc-kiD">
+                                <rect key="frame" x="0.0" y="188" width="414" height="625"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="gmv-gd-5lr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gmv-gd-5lr" firstAttribute="bottom" secondItem="mI5-Vc-kiD" secondAttribute="bottom" id="0s9-Qg-a1T"/>
+                            <constraint firstItem="L84-4a-ux7" firstAttribute="top" secondItem="gmv-gd-5lr" secondAttribute="top" constant="20" id="JRc-sa-p7T"/>
+                            <constraint firstItem="gmv-gd-5lr" firstAttribute="trailing" secondItem="mI5-Vc-kiD" secondAttribute="trailing" id="JXm-Ba-mTI"/>
+                            <constraint firstItem="gmv-gd-5lr" firstAttribute="trailing" secondItem="L84-4a-ux7" secondAttribute="trailing" id="YSQ-py-1TV"/>
+                            <constraint firstItem="mI5-Vc-kiD" firstAttribute="leading" secondItem="gmv-gd-5lr" secondAttribute="leading" id="dtL-aK-U3m"/>
+                            <constraint firstItem="L84-4a-ux7" firstAttribute="leading" secondItem="gmv-gd-5lr" secondAttribute="leading" id="lh4-H2-Ln2"/>
+                            <constraint firstItem="mI5-Vc-kiD" firstAttribute="top" secondItem="L84-4a-ux7" secondAttribute="bottom" constant="20" id="yM4-nS-4rc"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Article" id="fYw-2k-Uvn"/>
+                    <connections>
+                        <outlet property="ArticleDetail" destination="mI5-Vc-kiD" id="7ug-aG-evG"/>
+                        <outlet property="ArticleTitle" destination="L84-4a-ux7" id="FTX-RN-V8U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4YP-Gd-pKc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,6 +108,9 @@
                                                                             </fragment>
                                                                         </attributedString>
                                                                     </buttonConfiguration>
+                                                                    <connections>
+                                                                        <segue destination="RS3-EJ-j4I" kind="show" id="VyN-ZA-xCs"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time and Source" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Obb-6j-bCC">
                                                                     <rect key="frame" x="0.0" y="136" width="187" height="17"/>
@@ -239,6 +272,9 @@
                                                                             </fragment>
                                                                         </attributedString>
                                                                     </buttonConfiguration>
+                                                                    <connections>
+                                                                        <segue destination="RS3-EJ-j4I" kind="show" id="vGV-Tv-Pdy"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source and Time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sbc-Qr-4L9">
                                                                     <rect key="frame" x="0.0" y="136" width="187" height="17"/>
@@ -399,6 +435,9 @@
             <point key="canvasLocation" x="3586.9565217391305" y="65.625"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vGV-Tv-Pdy"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="chart.line.uptrend.xyaxis" catalog="system" width="128" height="101"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
@@ -408,6 +447,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
