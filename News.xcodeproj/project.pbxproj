@@ -18,7 +18,6 @@
 		891C46492820085E00444E34 /* PopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891C46482820085E00444E34 /* PopularViewController.swift */; };
 		891C464B2820087D00444E34 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891C464A2820087D00444E34 /* SearchViewController.swift */; };
 		891C464D2820116100444E34 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891C464C2820116100444E34 /* HomeViewController.swift */; };
-		891C465128201BA500444E34 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891C465028201BA500444E34 /* SettingViewController.swift */; };
 		DB90CE3716D3F2235DC3854A /* Pods_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FAF71D917C036FD50F382F /* Pods_News.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +37,6 @@
 		891C46482820085E00444E34 /* PopularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularViewController.swift; sourceTree = "<group>"; };
 		891C464A2820087D00444E34 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		891C464C2820116100444E34 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		891C465028201BA500444E34 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		D3F832A345D924008BEEF50E /* Pods-News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.debug.xcconfig"; path = "Target Support Files/Pods-News/Pods-News.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,8 +111,6 @@
 				891C4631282002E200444E34 /* AppDelegate.swift */,
 				891C4633282002E200444E34 /* SceneDelegate.swift */,
 				891C463A282002E300444E34 /* Assets.xcassets */,
-				891C463C282002E300444E34 /* LaunchScreen.storyboard */,
-				891C4637282002E200444E34 /* Main.storyboard */,
 				891C463F282002E300444E34 /* Info.plist */,
 				891C463C282002E300444E34 /* LaunchScreen.storyboard */,
 				891C4637282002E200444E34 /* Main.storyboard */,
@@ -129,7 +125,6 @@
 				891C46482820085E00444E34 /* PopularViewController.swift */,
 				891C464A2820087D00444E34 /* SearchViewController.swift */,
 				891C464C2820116100444E34 /* HomeViewController.swift */,
-				891C465028201BA500444E34 /* SettingViewController.swift */,
 				02BA2E6D2829C99E0070DAA8 /* SideMenuTableViewController.swift */,
 			);
 			path = Controller;
@@ -256,7 +251,6 @@
 				02BA2E702829D49D0070DAA8 /* Menu.swift in Sources */,
 				891C4632282002E200444E34 /* AppDelegate.swift in Sources */,
 				891C464D2820116100444E34 /* HomeViewController.swift in Sources */,
-				891C465128201BA500444E34 /* SettingViewController.swift in Sources */,
 				891C4634282002E200444E34 /* SceneDelegate.swift in Sources */,
 				02BA2E6E2829C99E0070DAA8 /* SideMenuTableViewController.swift in Sources */,
 			);

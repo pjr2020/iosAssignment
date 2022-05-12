@@ -197,28 +197,6 @@
             </objects>
             <point key="canvasLocation" x="4497.1014492753629" y="65.625"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="IZs-jv-Fa1">
-            <objects>
-                <viewController storyboardIdentifier="SettingViewController" id="8si-O3-190" customClass="SettingViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pR8-Uz-eFU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="cIt-Kz-cTD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Settings" id="Njc-xe-6mC">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="line.3.horizontal" catalog="system" id="dCc-Hh-zBh">
-                            <connections>
-                                <action selector="sideMenuTapped:" destination="8si-O3-190" id="etQ-EG-7hY"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bD3-rd-S63" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1839.1304347826087" y="722.54464285714278"/>
-        </scene>
         <!--Popular-->
         <scene sceneID="xbj-hk-fTD">
             <objects>
@@ -351,7 +329,6 @@
                         <segue destination="3J0-dC-92Y" kind="relationship" relationship="viewControllers" id="xo5-ev-odZ"/>
                         <segue destination="rVK-Gl-pqT" kind="relationship" relationship="viewControllers" id="hES-PK-wx6"/>
                         <segue destination="OOa-Mk-zQw" kind="relationship" relationship="viewControllers" id="jvJ-qc-gIv"/>
-                        <segue destination="tk8-DZ-Nen" kind="relationship" relationship="viewControllers" id="NYh-jg-3Bk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J3A-yg-jvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -376,25 +353,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Adb-3o-spm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1839.1304347826087" y="65.625"/>
-        </scene>
-        <!--Setting-->
-        <scene sceneID="AJs-RJ-FVd">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tk8-DZ-Nen" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Setting" image="gearshape.fill" catalog="system" id="Foh-tn-f7t"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UMf-HY-dgI">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="8si-O3-190" kind="relationship" relationship="rootViewController" id="Yne-mJ-1nd"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cxk-pj-KSx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="722.54464285714278"/>
         </scene>
         <!--Popular-->
         <scene sceneID="kin-bi-kr2">
@@ -440,7 +398,6 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chart.line.uptrend.xyaxis" catalog="system" width="128" height="101"/>
-        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
