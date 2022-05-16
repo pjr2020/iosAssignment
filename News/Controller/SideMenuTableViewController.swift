@@ -13,7 +13,6 @@ class SideMenuTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.separatorStyle = .none
     }
@@ -33,6 +32,7 @@ class SideMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = tableRowData[indexPath.row]
+        cell.backgroundColor = UIColor(red: 40/255.0, green: 200/255.0, blue: 80/255.0, alpha: 0.5)
         return cell
     }
     
