@@ -8,19 +8,20 @@
 import Foundation
 import UIKit
 import SideMenu
+import TTGTagCollectionView
 
-class SearchViewController: UIViewController, UISearchControllerDelegate, SearchTableDelegate {
+class SearchViewController: UIViewController, UISearchControllerDelegate, SearchTableDelegate, TTGTextTagCollectionViewDelegate {
+    
     func passSelectedValue(selected name: String) {
         print("Name \(name)")
     }
     
-    
     var sideMenu: SideMenuNavigationController?
-    
 
-    //@IBOutlet weak var tableView: UITableView!
     var resultController: UISearchController!
     private var resultTableController: SearchTableViewController!
+    
+    let collectionView = TTGTextTagCollectionView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,31 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, Search
         sideMenuOpen()
         
         configureSearchController()
+        
+        collectionView.layoutMargins = UIEdgeInsets(top: 30, left: 100, bottom: 0, right: 0)
+        collectionView.alignment = .center
+        collectionView.delegate = self
+        view.addSubview(collectionView)
+        
+        addSearchTags()
+        
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.frame = CGRect(x: 0, y: 100, width: view.frame.size.width, height: 400)
+    }
+    
+    func addSearchTags(){
+        let config = TTGTextTagConfig()
+        config.backgroundColor = .lightGray
+        config.textColor = .black
+        config.borderColor = .gray
+        config.borderWidth = 1
+        
+        collectionView.addTags(["Africa", "Asia", "Australia", "Europe", "Middle East", "Latin America", "UK", "US", "Canada", "Football", "Cricket", "Rugby", "Golf", "Tennis", "Bitcoin", "Apple"], with: config)
+        
     }
     
     func configureSearchController() {
