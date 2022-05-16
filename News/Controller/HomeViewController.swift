@@ -12,7 +12,6 @@ import SideMenu
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var sideMenu: SideMenuNavigationController?
-
     @IBOutlet weak var sideMenuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
