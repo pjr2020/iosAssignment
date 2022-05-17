@@ -14,6 +14,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var sideMenu: SideMenuNavigationController?
     @IBOutlet weak var sideMenuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    
+    var newsArticles = [HomeViewModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,29 +24,49 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableView?.dataSource = self
         
         sideMenuOpen()
+        fetchAllNews()
         
     }
+    
+    private func fetchAllNews(){
+        APICaller.shared.getTopHeadlines{ [weak self] result in
+            switch result{
+            case .success(let articles):
+               // print(articles)
+                self?.newsArticles = articles.compactMap({
+                    HomeViewModel(
+                            title: $0.title ?? "No Title",
+                            imageURL: URL(string: $0.urlToImage ?? ""),
+                            source: $0.source.name ?? "No Source",
+                            publishedAt: $0.publishedAt ?? "No Date"
+                    )
+                })
 
-    var articles = [1,2,3]
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return articles.count
+       return newsArticles.count
     }
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-    let cell =  tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleTableViewCell
-    let index = articles[indexPath.row]
-    //cell.ArticleImage?.image = UIImage(systemName: "Homekit")
-        cell.ArticleImage.image = UIImage(named: "test")
-        cell.ArticleTitle?.setTitle("Title\(index)", for: .normal)
-        cell.ArticleTimeAndSource?.text = "Time and Source\(index)"
-    return cell
-
+        guard let cell =  tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as? ArticleTableViewCell else{
+            fatalError()
+        }
+        
+        cell.configure(with: newsArticles[indexPath.row])
+        return cell
     }
     
     func sideMenuOpen(){
@@ -68,6 +91,27 @@ class ArticleTableViewCell:UITableViewCell{
     @IBOutlet weak var ArticleTitle: UIButton!
     @IBOutlet weak var ArticleImage: UIImageView!
     @IBOutlet weak var ArticleTimeAndSource: UILabel!
+    
+    func configure(with viewModel: HomeViewModel){
+        ArticleTitle.setTitle(viewModel.title, for: .normal)
+        ArticleTimeAndSource.text = viewModel.source
+        
+        //Cache image if already loaded
+        if let imageData = viewModel.imageData{
+            ArticleImage.image = UIImage(data: imageData)
+        }else if let url = viewModel.imageURL{
+            URLSession.shared.dataTask(with: url){[weak self] data, _, error in
+                guard let data = data, error == nil else{
+                    return
+                }
+                
+                viewModel.imageData = data
+                DispatchQueue.main.async {
+                    self?.ArticleImage.image = UIImage(data: data)
+                }
+            }.resume()
+        }
+    }
     
 }
 
