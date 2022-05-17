@@ -75,7 +75,7 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
            return
         }
         
-        APICaller.shared.getAllNews(with: inputText) { [weak self] result in
+        APICaller.shared.searchAllNews(with: inputText) { [weak self] result in
             switch result{
             case .success(let articles):
                 print("Articles \(articles)")

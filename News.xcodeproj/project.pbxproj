@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		029C7980283438CB00058B0E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029C797F283438CB00058B0E /* HomeViewModel.swift */; };
 		02BA2E6E2829C99E0070DAA8 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BA2E6D2829C99E0070DAA8 /* SideMenuTableViewController.swift */; };
 		02BA2E702829D49D0070DAA8 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BA2E6F2829D49D0070DAA8 /* Menu.swift */; };
 		02C80479282FBE5400CB376F /* SearchTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C80478282FBE5400CB376F /* SearchTableCellViewModel.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		029C797F283438CB00058B0E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		02BA2E6D2829C99E0070DAA8 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		02BA2E6F2829D49D0070DAA8 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		02C80478282FBE5400CB376F /* SearchTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableCellViewModel.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				02BA2E6F2829D49D0070DAA8 /* Menu.swift */,
 				02E993D0282E154D007352C4 /* APICaller.swift */,
 				02C80478282FBE5400CB376F /* SearchTableCellViewModel.swift */,
+				029C797F283438CB00058B0E /* HomeViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				02E993D1282E154D007352C4 /* APICaller.swift in Sources */,
 				02BA2E702829D49D0070DAA8 /* Menu.swift in Sources */,
 				891C4632282002E200444E34 /* AppDelegate.swift in Sources */,
+				029C7980283438CB00058B0E /* HomeViewModel.swift in Sources */,
 				02E4492D282F7B8500B3CACF /* SearchTableViewController.swift in Sources */,
 				891C464D2820116100444E34 /* HomeViewController.swift in Sources */,
 				891C4634282002E200444E34 /* SceneDelegate.swift in Sources */,
