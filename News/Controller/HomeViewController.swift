@@ -9,13 +9,15 @@ import Foundation
 import UIKit
 import SideMenu
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+    
     
     var sideMenu: SideMenuNavigationController?
     @IBOutlet weak var sideMenuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
     var newsArticles = [HomeViewModel]()
+    var category: String = "Default"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,26 +31,57 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     private func fetchAllNews(){
-        APICaller.shared.getTopHeadlines{ [weak self] result in
-            switch result{
-            case .success(let articles):
-               // print(articles)
-                self?.newsArticles = articles.compactMap({
-                    HomeViewModel(
-                            title: $0.title ?? "No Title",
-                            imageURL: URL(string: $0.urlToImage ?? ""),
-                            source: $0.source.name ?? "No Source",
-                            publishedAt: $0.publishedAt ?? "No Date"
-                    )
-                })
+        
+        if (category == "Default"){
+            APICaller.shared.getTopHeadlines{ [weak self] result in
+                switch result{
+                case .success(let articles):
+                   // print(articles)
+                    self?.newsArticles = articles.compactMap({
+                        HomeViewModel(
+                                title: $0.title ?? "No Title",
+                                imageURL: URL(string: $0.urlToImage ?? ""),
+                                source: $0.source.name ?? "No Source",
+                                publishedAt: $0.publishedAt ?? "No Date"
+                        )
+                    })
 
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
+                    DispatchQueue.main.async {
+                        self?.tableView.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
                 }
-            case .failure(let error):
-                print(error)
+            }
+        }else {
+            
+//            guard let categoryText = !category.isEmpty else {
+//               return
+//            }
+            print("category\(category)")
+            
+            APICaller.shared.fetchByCategory(with: category) { [weak self] result in
+                switch result{
+                case .success(let articles):
+                    print("Articles \(articles)")
+                    self?.newsArticles = articles.compactMap({
+                        HomeViewModel(
+                                title: $0.title ?? "No Title",
+                                imageURL: URL(string: $0.urlToImage ?? ""),
+                                source: $0.source.name ?? "No Source",
+                                publishedAt: $0.publishedAt ?? "No Date"
+                        )
+                    })
+                    
+                    DispatchQueue.main.async {
+                        self?.tableView.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
+                }
             }
         }
+        
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {

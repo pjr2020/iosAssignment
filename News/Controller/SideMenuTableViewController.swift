@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol SideMenuTableDelegate {
+    func passSelectedValue(selected title: String)
+}
+
 class SideMenuTableViewController: UITableViewController {
     
-    let tableRowData = ["Top Stories", "Business", "Health", "Sports", "Technology", "Entertainment and Arts", "Education"]
+    let tableRowData = ["Top Stories", "Business", "Health", "Sports", "Technology", "Entertainment and Arts", "Science"]
+    
+    var delegate: SideMenuTableDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,27 +43,44 @@ class SideMenuTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         switch indexPath.row{
         case 0:
-            print("Navigate to top stories section")
+            let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeView, animated: true)
+            homeView.category = "Default"
             break
         case 1:
-            print("Navigate to Business section")
+            let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeView, animated: true)
+            homeView.category = "business"
             break
         case 2:
-            print("Navigate to Health section")
+            let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeView, animated: true)
+            homeView.category = "health"
             break
         case 3:
-            print("Navigate to Sports section")
+            let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeView, animated: true)
+            homeView.category = "sports"
             break
         case 4:
-            print("Navigate to Technology section")
+            let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeView, animated: true)
+            homeView.category = "technology"
             break
         case 5:
-            print("Navigate to Entertainment and Arts secrtion")
+            let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeView, animated: true)
+            homeView.category = "entertainment"
             break
         case 6:
-            print("Navigate to Education section")
+            let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeView, animated: true)
+            homeView.category = "science"
+            break
         default:
             break
         }
