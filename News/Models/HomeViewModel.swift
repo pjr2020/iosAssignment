@@ -14,16 +14,19 @@ class HomeViewModel{
     var imageData: Data? = nil
     let source: String
     let publishedAt: String
+    let content: String
     
     init(
         title: String,
         imageURL: URL?,
         source: String,
-        publishedAt: String
+        publishedAt: String,
+        content: String
     ){
         self.title = title
         self.imageURL = imageURL
         self.source = source
         self.publishedAt = publishedAt
+        self.content = content
     }
 }

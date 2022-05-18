@@ -10,10 +10,13 @@ import UIKit
 
 class SearchTableCellViewModel{
     let title: String
+    let content: String
     
     init(
-        title: String
+        title: String,
+        content: String
     ){
         self.title = title
+        self.content = content
     }
 }

@@ -27,24 +27,6 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
         //fetchAllNews()
     }
     
-    
-//    private func fetchAllNews(){
-//        APICaller.shared.getAllNews { [weak self] result in
-//            switch result{
-//            case .success(let articles):
-//                self?.newsTitles = articles.compactMap({
-//                    SearchTableCellViewModel(title: $0.title ?? "No Title")
-//                })
-//
-//                DispatchQueue.main.async {
-//                    self?.tableView.reloadData()
-//                }
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }
-
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,9 +47,12 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let selectedValue = newsTitles[indexPath.row]
-        delegate.passSelectedValue(selected: selectedValue.title)
-
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let articleView = storyboard.instantiateViewController(identifier: "ArticleViewController") as! ArticleViewController
+        self.navigationController?.pushViewController(articleView, animated: true)
+        articleView.articleTitle = newsTitles[indexPath.row].title
+        articleView.articleDetail = newsTitles[indexPath.row].content
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -78,9 +63,11 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
         APICaller.shared.searchAllNews(with: inputText) { [weak self] result in
             switch result{
             case .success(let articles):
-                print("Articles \(articles)")
                 self?.newsTitles = articles.compactMap({
-                    SearchTableCellViewModel(title: $0.title ?? "No Title")
+                    SearchTableCellViewModel(
+                        title: $0.title ?? "No Title",
+                        content: $0.content ?? "No Content"
+                    )
                 })
                 
                 DispatchQueue.main.async {

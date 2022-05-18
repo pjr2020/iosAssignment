@@ -50,36 +50,43 @@ class SideMenuTableViewController: UITableViewController {
             let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
             self.navigationController?.pushViewController(homeView, animated: true)
             homeView.category = "Default"
+            homeView.homeTitle = "Top Stories"
             break
         case 1:
             let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
             self.navigationController?.pushViewController(homeView, animated: true)
             homeView.category = "business"
+            homeView.homeTitle = "Business"
             break
         case 2:
             let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
             self.navigationController?.pushViewController(homeView, animated: true)
             homeView.category = "health"
+            homeView.homeTitle = "Health"
             break
         case 3:
             let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
             self.navigationController?.pushViewController(homeView, animated: true)
             homeView.category = "sports"
+            homeView.homeTitle = "Sports"
             break
         case 4:
             let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
             self.navigationController?.pushViewController(homeView, animated: true)
             homeView.category = "technology"
+            homeView.homeTitle = "Technology"
             break
         case 5:
             let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
             self.navigationController?.pushViewController(homeView, animated: true)
             homeView.category = "entertainment"
+            homeView.homeTitle = "Entertainment"
             break
         case 6:
             let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
             self.navigationController?.pushViewController(homeView, animated: true)
             homeView.category = "science"
+            homeView.homeTitle = "Science"
             break
         default:
             break
