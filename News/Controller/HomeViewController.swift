@@ -18,12 +18,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var newsArticles = [HomeViewModel]()
     var category: String = "Default"
+    var homeTitle: String = "Top Stories"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
+        
+        title = homeTitle
         
         sideMenuOpen()
         fetchAllNews()
@@ -42,7 +45,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                                 title: $0.title ?? "No Title",
                                 imageURL: URL(string: $0.urlToImage ?? ""),
                                 source: $0.source.name ?? "No Source",
-                                publishedAt: $0.publishedAt ?? "No Date"
+                                publishedAt: $0.publishedAt ?? "No Date",
+                                content: $0.content ?? "No Content"
                         )
                     })
 
@@ -69,7 +73,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                                 title: $0.title ?? "No Title",
                                 imageURL: URL(string: $0.urlToImage ?? ""),
                                 source: $0.source.name ?? "No Source",
-                                publishedAt: $0.publishedAt ?? "No Date"
+                                publishedAt: $0.publishedAt ?? "No Date",
+                                content: $0.content ?? "No Content"
                         )
                     })
                     
@@ -100,6 +105,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.configure(with: newsArticles[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let articleView = storyboard.instantiateViewController(identifier: "ArticleViewController") as! ArticleViewController
+        self.navigationController?.pushViewController(articleView, animated: true)
+        articleView.articleTitle = newsArticles[indexPath.row].title
+        articleView.articleDetail = newsArticles[indexPath.row].content
     }
     
     func sideMenuOpen(){

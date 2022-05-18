@@ -18,6 +18,7 @@ final class APICaller{
         static let searchApiUrl =  "https://newsapi.org/v2/everything?sortedBy=popularity&apiKey=1f602eef3e5240008aa943889e02a7f6&q="
         
         static let categoryApiUrl = "https://newsapi.org/v2/top-headlines?apiKey=1f602eef3e5240008aa943889e02a7f6&category="
+        
     }
     
     private init() {}

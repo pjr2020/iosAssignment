@@ -36,8 +36,6 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, Search
         view.addSubview(collectionView)
         
         addSearchTags()
-        
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -54,6 +52,15 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, Search
         
         collectionView.addTags(["Africa", "Asia", "Australia", "Europe", "Middle East", "Latin America", "UK", "US", "Canada", "Football", "Cricket", "Rugby", "Golf", "Tennis", "Bitcoin", "Apple"], with: config)
         
+    }
+    
+    func textTagCollectionView(_ textTagCollectionView: TTGTextTagCollectionView!, didTapTag tagText: String!, at index: UInt, selected: Bool, tagConfig config: TTGTextTagConfig!) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let searchListView = storyboard.instantiateViewController(identifier: "SearchListViewController") as! SearchListViewController
+        self.navigationController?.pushViewController(searchListView, animated: true)
+
+        searchListView.tagValue = tagText
     }
     
     func configureSearchController() {

@@ -12,9 +12,15 @@ class ArticleViewController: UIViewController {
     @IBOutlet weak var ArticleTitle: UILabel!
     
     @IBOutlet weak var ArticleDetail: UITextView!
+    
+    var articleTitle = String()
+    var articleDetail = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        ArticleTitle.text = articleTitle
+        ArticleDetail.text = articleDetail
     }
 
 
