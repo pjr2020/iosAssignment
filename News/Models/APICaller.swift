@@ -15,6 +15,8 @@ final class APICaller{
         static let newsApiUrl = URL(string: "https://newsapi.org/v2/everything?sortedBy=popularity&apiKey=a2a6e11225744c1d86e70b798e97dd1c&q=")
         
         static let searchApiUrl =  "https://newsapi.org/v2/everything?sortedBy=popularity&apiKey=a2a6e11225744c1d86e70b798e97dd1c&q="
+        
+        static let testurl = "https://newsapi.org/v2/everything?pageSize=3&sortedBy=popularity&apiKey=a2a6e11225744c1d86e70b798e97dd1c&q="
     }
     
     private init() {}
@@ -25,7 +27,7 @@ final class APICaller{
             return
         }
         
-        let urlString = Constants.searchApiUrl + query
+        let urlString = Constants.testurl + query
         
         guard let url = URL(string: urlString) else{
             return

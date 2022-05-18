@@ -15,6 +15,8 @@ class PopularViewController: UIViewController, UITableViewDataSource, UITableVie
 
     
     @IBOutlet weak var tableView: UITableView!
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +38,14 @@ class PopularViewController: UIViewController, UITableViewDataSource, UITableVie
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-    let cell1 =  tableView.dequeueReusableCell(withIdentifier: "PopularCell", for: indexPath)
-    let cell = cell1 as! PopularTableViewCell
-    let index = articles[indexPath.row]
+        let cell1 =  tableView.dequeueReusableCell(withIdentifier: "PopularCell", for: indexPath)
+        let cell = cell1 as! PopularTableViewCell
+        let index = articles[indexPath.row]
     //cell.ArticleImage?.image = UIImage(systemName: "Homekit")
+//
+
         cell.PopularImage.image = UIImage(named: "test")
-        cell.PopularTitle?.setTitle("Title\(index)", for: .normal)
+        cell.PopularTitle?.setTitle("Title: \(index)", for: .normal)
         cell.PopularTimeAndSource?.text = "Time and Source\(index)"
     return cell
 
