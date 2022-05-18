@@ -16,6 +16,8 @@ final class APICaller{
         static let topHeadlinesApiUrl = URL(string: "https://newsapi.org/v2/top-headlines?country=AU&apiKey=1f602eef3e5240008aa943889e02a7f6")
         
         static let searchApiUrl =  "https://newsapi.org/v2/everything?sortedBy=popularity&apiKey=1f602eef3e5240008aa943889e02a7f6&q="
+        
+        static let categoryApiUrl = "https://newsapi.org/v2/top-headlines?apiKey=1f602eef3e5240008aa943889e02a7f6&category="
     }
     
     private init() {}
@@ -57,6 +59,38 @@ final class APICaller{
         let urlString = Constants.topHeadlinesApiUrl
         
         guard let url = urlString else{
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) {data, _, error in
+            if let error = error {
+                completion(.failure(error))
+            }
+            else if let data = data {
+                
+                do {
+                    let result = try JSONDecoder().decode(APIResponse.self, from: data)
+                    print("Result \(result.articles.count)")
+                    completion(.success(result.articles))
+                }
+                catch{
+                    completion(.failure(error))
+                }
+            }
+        }
+        
+        task.resume()
+    }
+    
+    public func fetchByCategory(with query: String, completion: @escaping (Result<[Article], Error>) ->Void){
+        
+        guard !query.trimmingCharacters(in: .whitespaces).isEmpty else{
+            return
+        }
+        
+        let urlString = Constants.categoryApiUrl + query
+        
+        guard let url = URL(string: urlString) else{
             return
         }
         
