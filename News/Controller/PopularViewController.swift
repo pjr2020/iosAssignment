@@ -107,6 +107,15 @@ class PopularViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
 
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let articleView = storyboard.instantiateViewController(identifier: "ArticleViewController") as! ArticleViewController
+        self.navigationController?.pushViewController(articleView, animated: true)
+        articleView.articleTitle = newsArticles[indexPath.row].title
+        articleView.articleDetail = newsArticles[indexPath.row].content
+    }
 
     
     

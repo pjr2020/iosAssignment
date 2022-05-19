@@ -145,6 +145,7 @@ class ArticleTableViewCell:UITableViewCell{
         //Cache image if already loaded
         if let imageData = viewModel.imageData{
             ArticleImage.image = UIImage(data: imageData)
+            
         }else if let url = viewModel.imageURL{
             URLSession.shared.dataTask(with: url){[weak self] data, _, error in
                 guard let data = data, error == nil else{
