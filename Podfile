@@ -8,5 +8,6 @@ target 'News' do
   # Pods for News
 source 'https://cocoapods-cdn.netlify.app/'
 pod 'SideMenu'
+pod 'TTGTagCollectionView'
 
 end

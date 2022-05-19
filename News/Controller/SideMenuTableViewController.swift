@@ -7,13 +7,18 @@
 
 import UIKit
 
+protocol SideMenuTableDelegate {
+    func passSelectedValue(selected title: String)
+}
+
 class SideMenuTableViewController: UITableViewController {
     
-    let tableRowData = ["Top Stories", "Business", "Health", "Sports", "Technology", "Entertainment and Arts", "Education"]
+    let tableRowData = ["Top Stories", "Business", "Health", "Sports", "Technology", "Entertainment and Arts", "Science"]
+    
+    var delegate: SideMenuTableDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.separatorStyle = .none
     }
@@ -33,31 +38,56 @@ class SideMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = tableRowData[indexPath.row]
+        cell.backgroundColor = UIColor(red: 40/255.0, green: 200/255.0, blue: 80/255.0, alpha: 0.5)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         switch indexPath.row{
         case 0:
-            print("Navigate to top stories section")
+            let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeView, animated: true)
+            homeView.category = "Default"
+            homeView.homeTitle = "Top Stories"
             break
         case 1:
-            print("Navigate to Business section")
+            let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeView, animated: true)
+            homeView.category = "business"
+            homeView.homeTitle = "Business"
             break
         case 2:
-            print("Navigate to Health section")
+            let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeView, animated: true)
+            homeView.category = "health"
+            homeView.homeTitle = "Health"
             break
         case 3:
-            print("Navigate to Sports section")
+            let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeView, animated: true)
+            homeView.category = "sports"
+            homeView.homeTitle = "Sports"
             break
         case 4:
-            print("Navigate to Technology section")
+            let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeView, animated: true)
+            homeView.category = "technology"
+            homeView.homeTitle = "Technology"
             break
         case 5:
-            print("Navigate to Entertainment and Arts secrtion")
+            let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeView, animated: true)
+            homeView.category = "entertainment"
+            homeView.homeTitle = "Entertainment"
             break
         case 6:
-            print("Navigate to Education section")
+            let homeView = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+            self.navigationController?.pushViewController(homeView, animated: true)
+            homeView.category = "science"
+            homeView.homeTitle = "Science"
+            break
         default:
             break
         }
