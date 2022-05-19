@@ -139,7 +139,7 @@ class ArticleTableViewCell:UITableViewCell{
     @IBOutlet weak var ArticleTimeAndSource: UILabel!
     
     func configure(with viewModel: HomeViewModel){
-        ArticleTitle.setTitle(viewModel.title, for: .normal)
+        ArticleTitle.setTitle(String(viewModel.title.prefix(30))+"...", for: .normal)
         ArticleTimeAndSource.text = viewModel.source
         
         //Cache image if already loaded

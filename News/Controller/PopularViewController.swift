@@ -133,7 +133,7 @@ class PopularTableViewCell:UITableViewCell{
     @IBOutlet weak var PopularTimeAndSource: UILabel!
     
     func configure(with viewModel: HomeViewModel){
-        PopularTitle.setTitle(viewModel.title, for: .normal)
+        PopularTitle.setTitle(String(viewModel.title.prefix(30))+"...", for: .normal)
         PopularTimeAndSource.text = viewModel.source
         
         //Cache image if already loaded
