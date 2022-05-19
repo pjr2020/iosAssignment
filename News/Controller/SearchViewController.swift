@@ -50,7 +50,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, Search
         config.borderColor = .gray
         config.borderWidth = 1
         
-        collectionView.addTags(["Africa", "Asia", "Australia", "Europe", "Middle East", "Latin America", "UK", "US", "Canada", "Football", "Cricket", "Rugby", "Golf", "Tennis", "Bitcoin", "Apple"], with: config)
+        collectionView.addTags(["Africa", "Asia", "Australia", "Europe", "Middle East", "Latin America", "UK", "US", "Canada", "Football", "Cricket", "Rugby", "Golf", "Tennis", "Bitcoin", "Apple", "SriLanka", "India", "Depp", "Heard", "Elections", "Philippines", "Twitter", "Elon", "Trump", "Ukraine", "NBA", "Covid", "Climate", "Oil", "Dubai", "Travel", "Culture", "MI5"], with: config)
         
     }
     
