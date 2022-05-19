@@ -19,6 +19,7 @@ final class APICaller{
         
         static let categoryApiUrl = "https://newsapi.org/v2/top-headlines?apiKey=1f602eef3e5240008aa943889e02a7f6&category="
         
+        static let popularApiUrl = URL(string: "https://newsapi.org/v2/top-headlines?language=en&apiKey=1f602eef3e5240008aa943889e02a7f6")
     }
     
     private init() {}
@@ -115,6 +116,34 @@ final class APICaller{
         task.resume()
     }
     
+    public func getPopularNews(completion: @escaping (Result<[Article], Error>) -> Void) {
+
+        let urlString = Constants.popularApiUrl
+        
+        guard let url = urlString else{
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) {data, _, error in
+            if let error = error {
+                completion(.failure(error))
+            }
+            else if let data = data {
+                
+                do {
+                    let result = try JSONDecoder().decode(APIResponse.self, from: data)
+                    print("Result \(result.articles.count)")
+                    completion(.success(result.articles))
+                }
+                catch{
+                    completion(.failure(error))
+                }
+            }
+        }
+        
+        task.resume()
+        
+    }
     
 }
 
