@@ -15,19 +15,13 @@ protocol SearchTableDelegate {
 class SearchTableViewController: UITableViewController, UISearchResultsUpdating{
     
     var delegate: SearchTableDelegate!
-
-    let stocks = ["Imani", "Thilini" ]
     
     var newsTitles = [SearchTableCellViewModel]()
     var filteredNewsTitles = [SearchTableCellViewModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //fetchAllNews()
     }
-    
-    // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows

@@ -43,6 +43,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, Search
         collectionView.frame = CGRect(x: 0, y: 100, width: view.frame.size.width, height: 400)
     }
     
+    // Function to handle search tags
     func addSearchTags(){
         let config = TTGTextTagConfig()
         config.backgroundColor = .lightGray
@@ -76,6 +77,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, Search
     func sideMenuOpen(){
         sideMenu = SideMenuNavigationController(rootViewController: SideMenuTableViewController())
         sideMenu?.leftSide = true
+        
         //Adding the draging option
         SideMenuManager.default.addPanGestureToPresent(toView: view)
         SideMenuManager.default.leftMenuNavigationController = sideMenu

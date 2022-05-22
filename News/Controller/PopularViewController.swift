@@ -30,13 +30,13 @@ class PopularViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
+    // Functiion to fetch popular news articles
     private func fetchPopularNews(){
         
         if (category == "Default"){
             APICaller.shared.getPopularNews{ [weak self] result in
                 switch result{
                 case .success(let articles):
-                   // print(articles)
                     self?.newsArticles = articles.compactMap({
                         HomeViewModel(
                                 title: $0.title ?? "No Title",
@@ -55,12 +55,6 @@ class PopularViewController: UIViewController, UITableViewDataSource, UITableVie
                 }
             }
         }else {
-            
-//            guard let categoryText = !category.isEmpty else {
-//               return
-//            }
-            print("category\(category)")
-            
             APICaller.shared.fetchByCategory(with: category) { [weak self] result in
                 switch result{
                 case .success(let articles):
@@ -85,8 +79,6 @@ class PopularViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         
     }
-
-    var articles = [1,2,3]
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -118,7 +110,7 @@ class PopularViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     
-    
+    // Function to handle side menu
     func sideMenuOpen(){
         sideMenu = SideMenuNavigationController(rootViewController: SideMenuTableViewController())
         sideMenu?.leftSide = true
