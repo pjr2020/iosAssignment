@@ -64,8 +64,8 @@
 		2D9F257BF08D659E084FAD343016660B /* TTGTextTagCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTGTextTagCollectionView.h; path = TTGTagCollectionView/Classes/TTGTextTagCollectionView.h; sourceTree = "<group>"; };
 		2E4E3EF628D01CCE8AD70777EDF702FE /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Pod/Classes/Protected.swift; sourceTree = "<group>"; };
 		2FE6D5938D1E15704A5D605A31F90E05 /* SideMenuPushCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPushCoordinator.swift; path = Pod/Classes/SideMenuPushCoordinator.swift; sourceTree = "<group>"; };
-		319D06AA0D1D0BA345459C039040A1ED /* SideMenu */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SideMenu; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		36C6F0DD9B00CD62109C2D53724C22F7 /* TTGTagCollectionView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TTGTagCollectionView; path = TTGTagCollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		319D06AA0D1D0BA345459C039040A1ED /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36C6F0DD9B00CD62109C2D53724C22F7 /* TTGTagCollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTGTagCollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3871E587181052A2F66592779DAF6A92 /* TTGTagCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTGTagCollectionView.h; path = TTGTagCollectionView/Classes/TTGTagCollectionView.h; sourceTree = "<group>"; };
 		3ED6CD2001B8339034E905F460D03694 /* Pods-News-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-News-acknowledgements.plist"; sourceTree = "<group>"; };
 		4311C670573BC8CDE43658B7F60DE017 /* Pods-News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-News.release.xcconfig"; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		94200D692E9EF5C85282CE6E6581B291 /* SideMenuInteractionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuInteractionController.swift; path = Pod/Classes/SideMenuInteractionController.swift; sourceTree = "<group>"; };
 		957AF7BAB56055A9AA7A7655ADA7480D /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
 		9C4B63BD68BACC73FFE7D31B82396B97 /* SideMenuAnimationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuAnimationController.swift; path = Pod/Classes/SideMenuAnimationController.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A29A6A26A6E4FBC88914454B6033B522 /* SideMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.release.xcconfig; sourceTree = "<group>"; };
 		A6D28C47E62E2E2C58BE7ED6859CE204 /* Pods-News-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-News-dummy.m"; sourceTree = "<group>"; };
 		AF7390706DB15F5D6FA702A78AD7739F /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewVibrantCell.swift; path = Pod/Classes/UITableViewVibrantCell.swift; sourceTree = "<group>"; };
@@ -134,8 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				D7FB6FCC0558D3A9640930561926D6C7 /* Pods-News */,
-				319D06AA0D1D0BA345459C039040A1ED /* SideMenu */,
-				36C6F0DD9B00CD62109C2D53724C22F7 /* TTGTagCollectionView */,
+				319D06AA0D1D0BA345459C039040A1ED /* SideMenu.framework */,
+				36C6F0DD9B00CD62109C2D53724C22F7 /* TTGTagCollectionView.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,7 +190,6 @@
 				AF7390706DB15F5D6FA702A78AD7739F /* UITableViewVibrantCell.swift */,
 				45FCEEC6B9EC4AB500452F8C8D1632E5 /* Support Files */,
 			);
-			name = SideMenu;
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
@@ -237,7 +236,6 @@
 				B661815A923F34B4C89E14D9FAF787A7 /* TTGTextTagCollectionView.m */,
 				B8540C3F3F05B27D26F95A462D3EE510 /* Support Files */,
 			);
-			name = TTGTagCollectionView;
 			path = TTGTagCollectionView;
 			sourceTree = "<group>";
 		};
@@ -334,7 +332,7 @@
 			);
 			name = SideMenu;
 			productName = SideMenu;
-			productReference = 319D06AA0D1D0BA345459C039040A1ED /* SideMenu */;
+			productReference = 319D06AA0D1D0BA345459C039040A1ED /* SideMenu.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F4949B35B65C78C4D7DCBEEA66EC61D4 /* TTGTagCollectionView */ = {
@@ -352,7 +350,7 @@
 			);
 			name = TTGTagCollectionView;
 			productName = TTGTagCollectionView;
-			productReference = 36C6F0DD9B00CD62109C2D53724C22F7 /* TTGTagCollectionView */;
+			productReference = 36C6F0DD9B00CD62109C2D53724C22F7 /* TTGTagCollectionView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -362,7 +360,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1320;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -549,7 +547,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SideMenu/SideMenu-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SideMenu/SideMenu-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -584,7 +582,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/TTGTagCollectionView/TTGTagCollectionView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/TTGTagCollectionView/TTGTagCollectionView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -619,7 +617,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/TTGTagCollectionView/TTGTagCollectionView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/TTGTagCollectionView/TTGTagCollectionView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -654,7 +652,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SideMenu/SideMenu-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SideMenu/SideMenu-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
