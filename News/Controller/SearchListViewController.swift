@@ -10,11 +10,7 @@ import UIKit
 import SideMenu
 
 class SearchListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    
-//    var sideMenu: SideMenuNavigationController?
-//
-//
-//    @IBOutlet weak var sideMenuButton: UIBarButtonItem!
+
     @IBOutlet weak var tableView: UITableView!
     var newsArticles = [HomeViewModel]()
     var tagValue: String = "Bitcoin"
@@ -82,21 +78,6 @@ class SearchListViewController: UIViewController, UITableViewDelegate, UITableVi
         articleView.articleTitle = newsArticles[indexPath.row].title
         articleView.articleDetail = newsArticles[indexPath.row].content
     }
-    
-//    func sideMenuOpen(){
-//        sideMenu = SideMenuNavigationController(rootViewController: SideMenuTableViewController())
-//        sideMenu?.leftSide = true
-//        //Adding the draging option
-//        SideMenuManager.default.addPanGestureToPresent(toView: view)
-//        SideMenuManager.default.leftMenuNavigationController = sideMenu
-//        sideMenu?.setNavigationBarHidden(true, animated: true)
-//
-//    }
-//
-//
-//    @IBAction func sideMenuTapped(_ sender: Any) {
-//        present(sideMenu!, animated: true, completion: nil)
-//    }
     
 }
 

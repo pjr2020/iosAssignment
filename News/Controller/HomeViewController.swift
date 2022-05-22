@@ -33,6 +33,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    // Function to fetch all news articles and display in home page. 
     private func fetchAllNews(){
         
         if (category == "Default"){
@@ -58,12 +59,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
             }
         }else {
-            
-//            guard let categoryText = !category.isEmpty else {
-//               return
-//            }
-            print("category\(category)")
-            
             APICaller.shared.fetchByCategory(with: category) { [weak self] result in
                 switch result{
                 case .success(let articles):
@@ -118,6 +113,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func sideMenuOpen(){
         sideMenu = SideMenuNavigationController(rootViewController: SideMenuTableViewController())
         sideMenu?.leftSide = true
+        
         //Adding the draging option
         SideMenuManager.default.addPanGestureToPresent(toView: view)
         SideMenuManager.default.leftMenuNavigationController = sideMenu

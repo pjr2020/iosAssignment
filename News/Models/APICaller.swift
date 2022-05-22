@@ -7,6 +7,8 @@
 
 import Foundation
 
+// Class to handle all API calls
+
 final class APICaller{
     static let shared = APICaller()
     let API_KEY = "a2a6e11225744c1d86e70b798e97dd1c"
@@ -24,6 +26,7 @@ final class APICaller{
     
     private init() {}
     
+    // Function to handle search API
     public func searchAllNews(with query: String, completion: @escaping (Result<[Article], Error>) ->Void){
         
         guard !query.trimmingCharacters(in: .whitespaces).isEmpty else{
@@ -56,6 +59,7 @@ final class APICaller{
         task.resume()
     }
     
+    // Function to handle top headlines API
     public func getTopHeadlines(completion: @escaping (Result<[Article], Error>) ->Void){
         
         let urlString = Constants.topHeadlinesApiUrl
@@ -84,6 +88,7 @@ final class APICaller{
         task.resume()
     }
     
+    //Function to handle fetch by category API
     public func fetchByCategory(with query: String, completion: @escaping (Result<[Article], Error>) ->Void){
         
         guard !query.trimmingCharacters(in: .whitespaces).isEmpty else{
@@ -116,6 +121,7 @@ final class APICaller{
         task.resume()
     }
     
+    // Function to handle popular news API
     public func getPopularNews(completion: @escaping (Result<[Article], Error>) -> Void) {
 
         let urlString = Constants.popularApiUrl
